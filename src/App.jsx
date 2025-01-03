@@ -11,7 +11,7 @@ function App() {
   const addToCart = (product, quantity) => {
     setCart((prevCart) => {
       const updatedCart = [...prevCart];
-      const existingProduct = updatedCart.find(item.id === product.id)
+      const existingProduct = updatedCart.find(item => item.id === product.id)
 
       if (existingProduct) {
         existingProduct.quantity += quantity;

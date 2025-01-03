@@ -31,12 +31,13 @@ const Home = ({ addToCart }) => {
 
   const decrement = (productId) => {
     setQuantity((prevQuantity) => ({
+      ...prevQuantity,
       [productId]: Math.max((prevQuantity[productId] || 0) - 1, 0)
     }));
   };
 
   const handleAddToCart = (product) => {
-    const productQuantity = quantity[productId] || 1;
+    const productQuantity = quantity[product.id] || 1;
     addToCart(product, productQuantity);
   };
 
